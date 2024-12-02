@@ -2,7 +2,6 @@
 This repo is the official implementation of the paper "RG-SAN: Rule-Guided Spatial Awareness Network for End-to-End 3D Referring Expression Segmentation".
 
 Demo:
-
 <video id="video" controls="" preload="none" poster="docs/cover.jpg">
       <source id="mp4" src="docs/Demo_RG-SAN.mp4" type="video/mp4">
 </video>
