@@ -66,7 +66,7 @@ Download the [ScanNet](http://www.scan-net.org/) v2 dataset.
 Put the downloaded `scans` folder as follows.
 
 ```
-3D-STMN
+RG-SAN
 ├── data
 │   ├── scannetv2
 │   │   ├── scans
@@ -82,7 +82,7 @@ bash prepare_data.sh
 The script data into train/val folder and preprocess the data. After running the script the scannet dataset structure should look like below.
 
 ```
-3D-STMN
+RG-SAN
 ├── data
 │   ├── scannetv2
 │   │   ├── scans
@@ -95,7 +95,7 @@ Download [ScanRefer](https://github.com/daveredrum/ScanRefer) annotations follow
 
 Put the downloaded `ScanRefer` folder as follows.
 ```
-3D-STMN
+RG-SAN
 ├── data
 │   ├── ScanRefer
 │   │   ├── ScanRefer_filtered_train.json
