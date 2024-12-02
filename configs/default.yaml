@@ -1,0 +1,151 @@
+train:
+  seed: 1999
+  epochs: 70
+  interval: 1
+  pretrain: backbones/sp_unet_backbone.pth
+  save_epoch: 505
+
+test:
+  seed: 1999
+  test_topk_per_scene: 100
+  test_score_thresh: 0.0
+  test_npoint_thresh: 100
+
+dataloader:
+  train:
+    batch_size: 2
+    num_workers: 8 
+    persistent_workers: True
+  val:
+    batch_size: 1
+    num_workers: 4
+    persistent_workers: True
+  test:
+    batch_size: 1
+    num_workers: 2
+    persistent_workers: True
+
+data:
+  train:
+    type: scannetv2_sample_graph_edge
+    data_root: data/
+    prefix: train
+    suffix: .pth
+    training: True
+    mode: 4
+    aug: True
+    with_elastic: True
+    use_xyz: True
+    voxel_cfg:
+      scale: 50
+      spatial_shape: [128, 512]
+      max_npoint: 250000
+    graph_pos_enc_dim: 5
+    max_des_len: 78
+    lang_num_max: 16
+  val:
+    type: scannetv2_sample_graph_edge
+    data_root: data/
+    prefix: val
+    suffix: .pth
+    training: False
+    mode: 4
+    aug: False
+    with_elastic: False
+    use_xyz: True
+    voxel_cfg:
+      scale: 50
+      spatial_shape: [128, 512]
+      max_npoint: 250000
+    graph_pos_enc_dim: 5
+    max_des_len: 78
+    lang_num_max: 64
+
+model:
+  input_channel: 6
+  blocks: 5
+  block_reps: 2
+  media: 32
+  normalize_before: True
+  return_blocks: True
+  pool: mean
+  tlm: 
+    num_layer: 6
+    d_model: 256
+    nhead: 8
+    hidden_dim: 1024
+    dropout: 0.0
+    activation_fn: gelu
+    iter_pred: True
+    attn_mask: True
+    kernel: target_id
+    query_init: cross_attn
+    global_feat: mean
+    attn_mask_thresh: 0.1
+    temperature: 10000
+    pos_type: fourier
+    graph_params:
+      num_atom_type: 30523 # tokenizer.vocab_size + 1
+      num_bond_type: 40
+      hidden_dim: 256
+      n_heads: 8
+      out_dim: 256
+      in_feat_dropout: 0.0
+      dropout: 0.0
+      n_layers: 12 # 10
+      layer_norm: False
+      batch_norm: True
+      residual: True
+      edge_feat: True
+      lap_pos_enc: True
+      wl_pos_enc: False
+      pos_enc_dim: 5 # 10
+      full_graph: False
+      cat: parallel # parallel
+    decoder:
+      d_model: 256
+      nhead: 8
+      dim_feedforward: 1024
+      dropout: 0.0
+      activation: gelu
+      quant_grid_length: 24
+      grid_size: 0.1
+      rel_query: True
+      rel_key: True
+      rel_value: True
+      abs_pos: True
+  criterion:
+    loss_weight: [1.0, 1.0, 0.5, 0.5]
+    loss_fun: focal
+  test_cfg:
+    topk_insts: 100
+    score_thr: 0.0
+    npoint_thr: 100
+  norm_eval: False
+  fix_module: [ 
+              'text_encoder',
+              #'input_conv',
+              #'unet',
+              #'output_layer',
+              ]
+
+optimizer:
+  type: AdamW
+  lr: 0.0001
+  weight_decay: 0.0005
+  paramwise_cfg:
+   text_encoder:
+     lr_mult: 0.001
+   input_conv:
+     lr_mult: 0.01
+   unet:
+     lr_mult: 0.01
+   output_layer:
+     lr_mult: 0.01
+   tlm:
+     lr_mult: 1.0
+
+lr_scheduler:
+  type: MultiStepLR
+  milestones: [26, 34, 46]
+  gamma: 0.5
