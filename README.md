@@ -38,7 +38,7 @@ The following installation suppose `python=3.8` `pytorch=1.12.1` and `cuda=11.3`
 
   ```
   pip install spconv-cu113
-  conda install pytorch-scatter -c pyg
+  pip install https://data.pyg.org/whl/torch-1.12.0%2Bcu113/torch_scatter-2.0.9-cp38-cp38-linux_x86_64.whl # please check the versions in the website
   pip install -r requirements.txt
   ```
 
@@ -123,7 +123,7 @@ bash scripts/train.sh
 ```
 
 ## Inference
-
+You can download our [checkpoint](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/22920182204313_stu_xmu_edu_cn/Eg54iH5XXDFErLI674r_dCEB_GCpHtf9g5U0WWBfvQvtqA?e=0qsifc) to reproduce the performance:
 ```
 bash scripts/test.sh
 ```
