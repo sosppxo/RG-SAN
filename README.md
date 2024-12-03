@@ -3,7 +3,7 @@
 
 NEWS:🔥RG-SAN is accepted at NeurIPS 2024 (Oral)!🔥
 
-We invite you to explore our series of works, including [3D-STMN](https://github.com/sosppxo/3D-STMN) and [3D-GRES](https://github.com/sosppxo/MDIN).
+We invite you to explore our series of works, including [3D-STMN (AAAI 2024)](https://github.com/sosppxo/3D-STMN) and [3D-GRES (MM 2024 Oral)](https://github.com/sosppxo/MDIN).
 
 Changli Wu, Qi Chen, Jiayi Ji, Haowei Wang, Yiwei Ma, You Huang, Gen Luo, Hao Fei, Xiaoshuai Sun, Rongrong Ji
 
