@@ -2,6 +2,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.12.1-%23EE4C2C.svg?style=&logo=PyTorch&logoColor=white)](https://pytorch.org/)
 
 NEWS:🔥RG-SAN is accepted at NeurIPS 2024 (Oral)!🔥
+
 We invite you to explore our series of works, including [3D-STMN](https://github.com/sosppxo/3D-STMN) and [3D-GRES](https://github.com/sosppxo/MDIN).
 
 Changli Wu, Qi Chen, Jiayi Ji, Haowei Wang, Yiwei Ma, You Huang, Gen Luo, Hao Fei, Xiaoshuai Sun, Rongrong Ji
