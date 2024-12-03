@@ -1,5 +1,8 @@
-# RG-SAN
-This repo is the official implementation of the paper "RG-SAN: Rule-Guided Spatial Awareness Network for End-to-End 3D Referring Expression Segmentation".
+# RG-SAN: Rule-Guided Spatial Awareness Network for End-to-End 3D Referring Expression Segmentation
+[![PyTorch](https://img.shields.io/badge/PyTorch-1.12.1-%23EE4C2C.svg?style=&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+NEWS:🔥RG-SAN is accepted at NeurIPS 2024 (Oral)!🔥
+
+Changli Wu, Qi Chen, Jiayi Ji, Haowei Wang, Yiwei Ma, You Huang, Gen Luo, Hao Fei, Xiaoshuai Sun, Rongrong Ji
 
 [Demo](https://stuxmueducn-my.sharepoint.com/personal/22920182204313_stu_xmu_edu_cn/_layouts/15/stream.aspx?id=%2Fpersonal%2F22920182204313%5Fstu%5Fxmu%5Fedu%5Fcn%2FDocuments%2FRG%2DSAN%2FDemo%5FRG%2DSAN%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E24238020%2Db322%2D4ee0%2D99b8%2D5e531c67ffc5)
 
