@@ -1,6 +1,9 @@
 # RG-SAN: Rule-Guided Spatial Awareness Network for End-to-End 3D Referring Expression Segmentation
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.12.1-%23EE4C2C.svg?style=&logo=PyTorch&logoColor=white)](https://pytorch.org/)
 
+**[🔗[arXiv]](https://arxiv.org/abs/2412.02402)** &emsp; 
+**[📄[PDF]](https://arxiv.org/pdf/2412.02402)** &emsp;
+
 NEWS:🔥RG-SAN is accepted at NeurIPS 2024 (Oral)!🔥
 
 We invite you to explore our series of works, including [3D-STMN (AAAI 2024)](https://github.com/sosppxo/3D-STMN) and [3D-GRES (MM 2024 Oral)](https://github.com/sosppxo/MDIN).
@@ -129,3 +132,20 @@ You can download our [checkpoint](https://stuxmueducn-my.sharepoint.com/:f:/g/pe
 ```
 bash scripts/test.sh
 ```
+
+## Citation
+
+If you find this work useful in your research, please cite:
+
+```
+@misc{2412.02402,
+Author = {Changli Wu and Qi Chen and Jiayi Ji and Haowei Wang and Yiwei Ma and You Huang and Gen Luo and Hao Fei and Xiaoshuai Sun and Rongrong Ji},
+Title = {RG-SAN: Rule-Guided Spatial Awareness Network for End-to-End 3D Referring Expression Segmentation},
+Year = {2024},
+Eprint = {arXiv:2412.02402},
+}
+```
+
+## Ancknowledgement
+
+Sincerely thanks for [3D-STMN](https://github.com/sosppxo/3D-STMN), [SSTNet](https://github.com/Gorilla-Lab-SCUT/SSTNet) and [SPFormer](https://github.com/sunjiahao1999/SPFormer) repos. This repo is build upon them.
