@@ -70,18 +70,6 @@ def main():
             progress_bar.update()
             
         progress_bar.close()
-
-    for idx, scan_id in enumerate(scan_ids):
-        object_id = object_ids[idx]
-        ann_id = ann_ids[idx]
-        piou = pious[idx]
-        iou_dict[scan_id+'_'+str(object_id).zfill(3)+'_'+str(ann_id).zfill(3)] = piou.item()
-        if len(lang_words) > 0:
-            words_dict[scan_id+'_'+str(object_id).zfill(3)+'_'+str(ann_id).zfill(3)] = lang_words[idx]
-    iou_path = os.path.join(os.path.dirname(args.checkpoint), 'ious.json')
-    # write to json
-    with open(iou_path, 'w') as f:
-        json.dump(iou_dict, f)
     
     if len(words_dict) > 0:
         words_path = os.path.join(os.path.dirname(args.checkpoint), 'words.json')
@@ -89,14 +77,6 @@ def main():
             json.dump(words_dict, f)
     else:
         all_masks = None
-    
-    for index in range(len(ann_ids)):
-        k = scan_ids[index] + '_' + str(object_ids[index]).zfill(3) + '_' + str(ann_ids[index]).zfill(3)
-        #if k in ['scene0030_00_052_002', 'scene0164_00_013_003', 'scene0621_00_028_000', 'scene0648_00_026_002']:
-        if k in ['scene0011_00_018_002', 'scene0025_00_011_002', 'scene0046_00_001_001', 'scene0050_00_003_002', 'scene0187_00_005_004', 'scene0329_00_009_003', 'scene0356_00_014_002',
-                 'scene0378_00_039_003', 'scene0378_00_043_004', 'scene0389_00_029_001', 'scene0426_00_008_003']:
-            np.save(k+'.npy', attn_map[index])
-            print(k, iou_dict[k])
     
     logger.info('Evaluate referring segmentation')
     # point-level metrics
@@ -107,8 +87,6 @@ def main():
     spprecision_quarter = (spious > 0.25).sum().astype(float) / spious.size
     spmiou = spious.mean()
     logger.info('sp_Acc@25: {:.3f}. sp_Acc@50: {:.3f}. sp_mIOU: {:.3f}.'.format(spprecision_quarter, spprecision_half, spmiou))
-    
-    print(pious.size)
 
     with open(os.path.join(cfg.data.val.data_root,"lookup.json"),'r') as load_f:
         # unique为1, multi为0
