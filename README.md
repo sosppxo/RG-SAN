@@ -10,7 +10,7 @@ We invite you to explore our series of works, including [3D-STMN (AAAI 2024)](ht
 
 Changli Wu, Qi Chen, Jiayi Ji, Haowei Wang, Yiwei Ma, You Huang, Gen Luo, Hao Fei, Xiaoshuai Sun, Rongrong Ji
 
-[Demo](https://stuxmueducn-my.sharepoint.com/personal/22920182204313_stu_xmu_edu_cn/_layouts/15/stream.aspx?id=%2Fpersonal%2F22920182204313%5Fstu%5Fxmu%5Fedu%5Fcn%2FDocuments%2FRG%2DSAN%2FDemo%5FRG%2DSAN%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E24238020%2Db322%2D4ee0%2D99b8%2D5e531c67ffc5)
+[Demo](https://stuxmueducn-my.sharepoint.com/personal/22920182204313_stu_xmu_edu_cn/_layouts/15/stream.aspx?id=%2Fpersonal%2F22920182204313%5Fstu%5Fxmu%5Fedu%5Fcn%2FDocuments%2FRG%2DSAN%2FDemo%5FRG%2DSAN%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Edb172cb0%2D650c%2D4238%2Da55a%2D54199b2b92a3)
 
 Framework:
 
