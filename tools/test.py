@@ -89,7 +89,6 @@ def main():
     logger.info('sp_Acc@25: {:.3f}. sp_Acc@50: {:.3f}. sp_mIOU: {:.3f}.'.format(spprecision_quarter, spprecision_half, spmiou))
 
     with open(os.path.join(cfg.data.val.data_root,"lookup.json"),'r') as load_f:
-        # unique为1, multi为0
         unique_multi_lookup = json.load(load_f)
     unique, multi = [], []
     for idx, scan_id in enumerate(scan_ids):
