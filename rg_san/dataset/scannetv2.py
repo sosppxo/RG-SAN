@@ -13,7 +13,7 @@ from tqdm import tqdm
 from gorilla import is_main_process
 import dgl
 from scipy import sparse as sp
-import sng_parser
+# import sng_parser
 from transformers import AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained('./backbones/mpnet-base')
 
