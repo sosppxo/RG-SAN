@@ -208,7 +208,10 @@ class ScanNetDataset_sample_graph_edge(Dataset):
                 # ROOT node
                 token_id = [tokenizer.vocab_size]
                 # words without cls token and sep token
-                token_id += tokenizer.encode(words, add_special_tokens=False)
+                # token_id += tokenizer.encode(words, add_special_tokens=False)
+                ids = tokenizer(words, add_special_tokens=False, is_split_into_words=False)['input_ids']
+                for id in ids:
+                    token_id.append(id[0])
                 assert len(token_id)==g.num_nodes()
                 g.ndata['feat'] = torch.tensor(token_id)
                 # edge feat
